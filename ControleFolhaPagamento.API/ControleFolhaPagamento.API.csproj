@@ -9,8 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dto\" />
-    <Folder Include="Mappers\" />
+    <ProjectReference Include="..\ControleFolhaPagamento.Aplicacao\ControleFolhaPagamento.Aplicacao.csproj" />
   </ItemGroup>
 
 </Project>
