@@ -1,0 +1,21 @@
+name: Pull Validation
+
+on: [pull_request]
+
+jobs:
+  pull-validate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+         dotnet-version: 5.0.100
+    - name: Restaurar dependencias
+      run: dotnet restore ./ControleFolhaPagamento.sln
+    - name: Compilacao
+      run: dotnet build ./ControleFolhaPagamento.sln
+    - name: Testes
+      run: dotnet test ./ControleFolhaPagamento.sln
+
+
