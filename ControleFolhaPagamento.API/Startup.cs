@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using ControleFolhaPagamento.API.Configuration;
+using ControleFolhaPagamento.Aplicacao.Infraestrutura.Contexts;
 
 namespace ControleFolhaPagamento.API
 {
@@ -20,6 +22,11 @@ namespace ControleFolhaPagamento.API
         {
             services.RegistrarDependencias();
             services.AddControllers();
+
+            services.AddDbContext<GlobalContext>(options =>
+            {           
+                options.UseNpgsql(Configuration.GetConnectionString("Default"));
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
