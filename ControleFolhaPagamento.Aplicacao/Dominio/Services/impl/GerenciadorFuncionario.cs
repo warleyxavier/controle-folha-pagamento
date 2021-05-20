@@ -1,30 +1,27 @@
 ﻿using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories;
 using System;
 
 namespace ControleFolhaPagamento.Aplicacao.Dominio.Services.impl
 {
     public class GerenciadorFuncionario : IGerenciadorFuncionario
     {
+        private readonly IFuncionarioRepository repository;
+
+        public GerenciadorFuncionario(IFuncionarioRepository repository)
+        {
+            this.repository = repository;
+        }
+
         public int inserir(Funcionario funcionario)
         {
-            var random = new Random();
-
-            return random.Next();
+            Funcionario funcionarioInserido = this.repository.Inserir(funcionario);
+            return funcionarioInserido.Id;
         }
 
         public Funcionario pesquisar(int id)
         {
-            return new Funcionario()
-            {
-                Id = id,
-                Nome = "Warley",
-                SobreNome = "Xavier",
-                Setor = "TI",
-                SalarioBruto = 500.00,
-                PossuiPlanoDental = true,
-                PossuiPlanoSaude = false,
-                PossuiValeTransporte = true
-            };
+            return this.repository.Pesquisar(id);
         }
     }
 }
