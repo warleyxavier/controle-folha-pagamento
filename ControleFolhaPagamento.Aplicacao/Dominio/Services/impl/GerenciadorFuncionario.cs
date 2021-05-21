@@ -1,4 +1,4 @@
-﻿using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+﻿using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories;
 

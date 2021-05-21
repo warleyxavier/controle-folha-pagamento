@@ -4,7 +4,7 @@ using ControleFolhaPagamento.Aplicacao.Dominio.Services;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories;
 using ControleFolhaPagamento.Aplicacao.Dominio.Services.impl;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 using System;
 
 namespace ControleFolhaPagamento.Tests.Services

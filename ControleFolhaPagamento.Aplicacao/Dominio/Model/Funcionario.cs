@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleFolhaPagamento.Aplicacao.Dominio.Entidades
+namespace ControleFolhaPagamento.Aplicacao.Dominio.Model
 {
     public class Funcionario
     {

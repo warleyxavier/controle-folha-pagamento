@@ -1,5 +1,5 @@
 ﻿using ControleFolhaPagamento.API.Dto;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 using System;
 
 namespace ControleFolhaPagamento.API.Mappers.impl

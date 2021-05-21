@@ -32,7 +32,7 @@ namespace ControleFolhaPagamento.API.Middlewares
         {
             int statusCode = 500;
 
-            if (e is BaseException exception)
+            if (e is EBaseException exception)
                 statusCode = exception.StatusCode;
 
             string resposta = ConverterExcecaoParaJson(e);
@@ -45,7 +45,7 @@ namespace ControleFolhaPagamento.API.Middlewares
 
         public string ConverterExcecaoParaJson(Exception e)
         {
-            if (e is ValidacaoException exception)
+            if (e is EValidacaoException exception)
                 return JsonSerializer.Serialize(new FalhaRequisicaoComErrosDto(exception.Message, exception.Erros));
 
             return JsonSerializer.Serialize(new FalhaRequisicaoDto(e.Message));

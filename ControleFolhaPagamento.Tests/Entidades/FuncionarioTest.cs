@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 
 namespace ControleFolhaPagamento.Tests.Entidades
 {

@@ -19,6 +19,7 @@ namespace ControleFolhaPagamento.API.Configuration
             services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
             services.AddScoped<IValidadorFuncionario, ValidadorFuncionario>();
             services.AddScoped<IGerenciadorFuncionario, GerenciadorFuncionario>();
+            services.AddScoped<IGeradorContraCheque, GeradorContraCheque>();
 
             return services;
         }

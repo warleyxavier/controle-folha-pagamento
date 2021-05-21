@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using ControleFolhaPagamento.API.Dto;
 using ControleFolhaPagamento.API.Mappers;
 using ControleFolhaPagamento.Aplicacao.Dominio.Services;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 
 namespace ControleFolhaPagamento.API.Controllers
 {
@@ -13,11 +13,13 @@ namespace ControleFolhaPagamento.API.Controllers
     {
         private readonly IFuncionarioMapper funcionarioMapper;
         private readonly IGerenciadorFuncionario gerenciadorFuncionario;
+        private readonly IGeradorContraCheque geradorContraCheque;
 
-        public FuncionarioController(IFuncionarioMapper funcionarioMapper, IGerenciadorFuncionario gerenciadorFuncionario)
+        public FuncionarioController(IFuncionarioMapper funcionarioMapper, IGerenciadorFuncionario gerenciadorFuncionario, IGeradorContraCheque geradorContraCheque)
         {
             this.funcionarioMapper = funcionarioMapper;
             this.gerenciadorFuncionario = gerenciadorFuncionario;
+            this.geradorContraCheque = geradorContraCheque;
         }
 
         [HttpGet]
@@ -32,6 +34,13 @@ namespace ControleFolhaPagamento.API.Controllers
         {
             var funcionario = this.funcionarioMapper.ParaEntidade(funcionarioDto);
             return this.funcionarioMapper.ParaCodigoInseridoDto(this.gerenciadorFuncionario.inserir(funcionario));
+        }
+
+        [HttpGet]
+        [Route("{id}/contraCheque")]
+        public ContraCheque GerarContraCheque(int id)
+        {
+            return this.geradorContraCheque.Gerar(id);
         }
     }
 }

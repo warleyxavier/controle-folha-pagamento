@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 using ControleFolhaPagamento.Aplicacao.Dominio.Excecoes;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +32,7 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Validadores.impl
             if (resultadosValidacao.IsValid)
                 return;
 
-            throw new ValidacaoException(ConverterParaArrayDeErros(resultadosValidacao.Errors));
+            throw new EValidacaoException(ConverterParaArrayDeErros(resultadosValidacao.Errors));
         }
 
         private string[] ConverterParaArrayDeErros(List<ValidationFailure> falhas)
