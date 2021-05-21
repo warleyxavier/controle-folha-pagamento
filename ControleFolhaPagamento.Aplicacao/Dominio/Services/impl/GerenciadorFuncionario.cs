@@ -1,20 +1,24 @@
 ﻿using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Validadores;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories;
-using System;
 
 namespace ControleFolhaPagamento.Aplicacao.Dominio.Services.impl
 {
     public class GerenciadorFuncionario : IGerenciadorFuncionario
     {
         private readonly IFuncionarioRepository repository;
+        private readonly IValidadorFuncionario validadorFuncionario;
 
-        public GerenciadorFuncionario(IFuncionarioRepository repository)
+        public GerenciadorFuncionario(IFuncionarioRepository repository, IValidadorFuncionario validadorFuncionario)
         {
             this.repository = repository;
+            this.validadorFuncionario = validadorFuncionario;
         }
 
         public int inserir(Funcionario funcionario)
         {
+            this.validadorFuncionario.Validar(funcionario);
+            funcionario.RemoverCaracteresDoDocumento();
             Funcionario funcionarioInserido = this.repository.Inserir(funcionario);
             return funcionarioInserido.Id;
         }

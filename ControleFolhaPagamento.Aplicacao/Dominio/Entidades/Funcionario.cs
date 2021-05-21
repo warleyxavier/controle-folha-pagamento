@@ -17,5 +17,10 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Entidades
         public bool PossuiPlanoSaude { get; set; }
         public bool PossuiPlanoDental { get; set; }
         public bool PossuiValeTransporte { get; set; }
+
+        public void RemoverCaracteresDoDocumento()
+        {
+            Documento = Documento.Replace(".", "").Replace("-", "");
+        }
     }
 }
