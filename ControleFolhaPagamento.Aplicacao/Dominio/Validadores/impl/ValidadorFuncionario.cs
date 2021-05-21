@@ -11,7 +11,7 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Validadores.impl
     {
         public ValidadorFuncionario()
         {
-            const string REGEX_PARA_VALIDAR_CPF = "^[0-9]{3}.?[0-9]{3}.?[0-9]{3}-?[0-9]{2}";
+            const string REGEX_PARA_VALIDAR_CPF = @"^\d{3}\.?\d{3}\.?\d{3}\-?\d{2}$";
             const string MENSAGEM_PADRAO = "{PropertyName} não foi informado";
 
             RuleFor(funcionario => funcionario.Nome).NotEmpty().WithMessage(MENSAGEM_PADRAO);
@@ -39,7 +39,7 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Validadores.impl
         {
             return falhas.Select(falha =>
             {
-                return $"{falha.PropertyName}: {falha.ErrorMessage}";
+                return falha.ErrorMessage;
             }).ToArray();
         }
     }
