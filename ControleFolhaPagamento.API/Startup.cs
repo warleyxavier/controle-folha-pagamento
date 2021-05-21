@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using ControleFolhaPagamento.API.Configuration;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Contexts;
+using ControleFolhaPagamento.API.Middlewares;
 
 namespace ControleFolhaPagamento.API
 {
@@ -36,6 +37,7 @@ namespace ControleFolhaPagamento.API
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<TratadorExcecoes>();
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
