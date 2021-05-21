@@ -28,9 +28,10 @@ namespace ControleFolhaPagamento.API.Controllers
         }
 
         [HttpPost]
-        public int Criar([FromBody] FuncionarioParaInsercaoDto funcionario)
+        public CodigoFuncionarioInseridoDto Criar([FromBody] FuncionarioParaInsercaoDto funcionarioDto)
         {
-            return this.gerenciadorFuncionario.inserir(this.funcionarioMapper.ParaEntidade(funcionario));
+            var funcionario = this.funcionarioMapper.ParaEntidade(funcionarioDto);
+            return this.funcionarioMapper.ParaCodigoInseridoDto(this.gerenciadorFuncionario.inserir(funcionario));
         }
     }
 }

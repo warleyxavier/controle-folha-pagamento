@@ -8,18 +8,25 @@ namespace ControleFolhaPagamento.API.Mappers.impl
     {
         public Funcionario ParaEntidade(FuncionarioParaInsercaoDto dto)
         {
-            var entidade = new Funcionario()
+            return new Funcionario()
             {
                 Nome = dto.nome,
                 SobreNome = dto.sobrenome,
                 Setor = dto.setor,
+                Documento = dto.documento,
                 SalarioBruto = dto.salariobruto,
                 PossuiPlanoDental = dto.possuiPlanoDental,
                 PossuiPlanoSaude = dto.possuiPlanoSaude,
                 PossuiValeTransporte = dto.possuiValeTransporte
             };
+        }
 
-            return entidade;
+        public CodigoFuncionarioInseridoDto ParaCodigoInseridoDto(int codigoInserido)
+        {
+            return new CodigoFuncionarioInseridoDto()
+            {
+                codigoInserido = codigoInserido
+            };
         }
     }
 }
