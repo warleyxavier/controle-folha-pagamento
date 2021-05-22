@@ -34,7 +34,7 @@ namespace ControleFolhaPagamento.Tests.Commands
         [InlineData(100)]
         [InlineData(1000)]
         [InlineData(150.80)]
-        public void DeveriaGerarDesconto(float salario)
+        public void DeveriaGerarDesconto(double salario)
         {
             const double VALOR_DE_DESCONTO_ESPERADO = 5.00;
 
