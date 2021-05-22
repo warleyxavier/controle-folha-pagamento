@@ -11,7 +11,7 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Commands.impl
                 new GeradorDescontoImpostoRendaCommand(),
                 new GeradorDescontoPlanoSaudeCommand(),
                 new GeradorDescontoPlanoDentalCommand(),
-                new GeradorDescontoValeTransporte(),
+                new GeradorDescontoValeTransporteCommand(),
                 new GeradorDescontoFGTSCommand()
             };
         }

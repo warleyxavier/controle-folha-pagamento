@@ -3,7 +3,7 @@ using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 
 namespace ControleFolhaPagamento.Aplicacao.Dominio.Commands.impl
 {
-    public class GeradorDescontoValeTransporte : IGeradorDescontoCommand
+    public class GeradorDescontoValeTransporteCommand : IGeradorDescontoCommand
     {
         private const double PERCENTUAL_DESCONTO = 6.00;
 
@@ -11,7 +11,7 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Commands.impl
         {
             const double MENOR_SALARIO_PARA_CALCULO = 1500;
 
-            return funcionario.PossuiValeTransporte && funcionario.SalarioBruto > MENOR_SALARIO_PARA_CALCULO;
+            return funcionario.PossuiValeTransporte && funcionario.SalarioBruto >= MENOR_SALARIO_PARA_CALCULO;
         }
 
         public Lancamento Gerar(Funcionario funcionario)
