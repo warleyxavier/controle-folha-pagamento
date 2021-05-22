@@ -1,11 +1,11 @@
-﻿using Xunit;
+﻿using System;
+using Xunit;
 using Moq;
 using ControleFolhaPagamento.Aplicacao.Dominio.Services;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories;
 using ControleFolhaPagamento.Aplicacao.Dominio.Services.impl;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
-using System;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 
 namespace ControleFolhaPagamento.Tests.Services
 {

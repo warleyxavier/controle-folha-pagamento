@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Contexts;
 
 namespace ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories.impl
@@ -16,8 +16,6 @@ namespace ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories.impl
 
         public Funcionario Inserir(Funcionario funcionario)
         {
-            int count = this.context.Funcionarios.Count();
-
             this.context.Funcionarios.Add(funcionario);
             this.context.SaveChanges();
             return funcionario;

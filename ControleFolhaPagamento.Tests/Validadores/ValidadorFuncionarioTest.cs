@@ -1,5 +1,5 @@
 ﻿using Xunit;
-using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 using ControleFolhaPagamento.Aplicacao.Dominio.Excecoes;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores.impl;
@@ -52,14 +52,14 @@ namespace ControleFolhaPagamento.Tests.Validadores
 
         private void ValidarLancamentoExcecaoAoValidarFuncionario(Funcionario funcionario, string[] falhasEsperadas)
         {
-            var exception = Assert.Throws<ValidacaoException>(() =>
+            var exception = Assert.Throws<EValidacaoException>(() =>
             {
                 validador.Validar(funcionario);
             });
 
             foreach (var falha in falhasEsperadas)
             {
-                Assert.True(exception.Erros.Contains(falha));
+                Assert.Contains(falha, exception.Erros);
             }
         }
 

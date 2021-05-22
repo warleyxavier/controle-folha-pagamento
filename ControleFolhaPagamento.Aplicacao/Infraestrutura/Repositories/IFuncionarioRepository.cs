@@ -1,4 +1,4 @@
-﻿using ControleFolhaPagamento.Aplicacao.Dominio.Entidades;
+﻿using ControleFolhaPagamento.Aplicacao.Dominio.Model;
 
 namespace ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories
 {

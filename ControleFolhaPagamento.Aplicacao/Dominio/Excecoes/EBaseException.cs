@@ -2,9 +2,9 @@
 
 namespace ControleFolhaPagamento.Aplicacao.Dominio.Excecoes
 {
-    public class BaseException : Exception
+    public class EBaseException : Exception
     {
-        public BaseException(int statusCode, string mensagem): base(mensagem)
+        public EBaseException(int statusCode, string mensagem): base(mensagem)
         {
             StatusCode = statusCode;
         }
