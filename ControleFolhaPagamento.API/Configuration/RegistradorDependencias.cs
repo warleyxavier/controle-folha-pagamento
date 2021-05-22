@@ -7,6 +7,8 @@ using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Repositories.impl;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores;
 using ControleFolhaPagamento.Aplicacao.Dominio.Validadores.impl;
+using ControleFolhaPagamento.Aplicacao.Dominio.Commands;
+using ControleFolhaPagamento.Aplicacao.Dominio.Commands.impl;
 
 namespace ControleFolhaPagamento.API.Configuration
 {
@@ -20,6 +22,7 @@ namespace ControleFolhaPagamento.API.Configuration
             services.AddScoped<IValidadorFuncionario, ValidadorFuncionario>();
             services.AddScoped<IGerenciadorFuncionario, GerenciadorFuncionario>();
             services.AddScoped<IGeradorContraCheque, GeradorContraCheque>();
+            services.AddScoped<IGeradorDescontoFactory, GeradorDescontoFactory>();            
 
             return services;
         }
