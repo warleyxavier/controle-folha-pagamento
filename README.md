@@ -20,6 +20,7 @@ A aplicação é responsável pela gestão de funcionários (cadastro e consulta
 	"documento": "",
 	"setor": "",
 	"salariobruto": 0,
+    "dataAdmissao": "YYYY-MM-DD",
 	"possuiplanosaude": false,
 	"possuiplanodental": false,
 	"possuivaletransporte": false
