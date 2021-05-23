@@ -13,7 +13,7 @@ jobs:
           SENHA_DOCKER_HUB: ${{secrets.SENHA_DOCKER_HUB}}
         run: docker login -u $USUARIO_DOCKER_HUB -p $SENHA_DOCKER_HUB
       - name: Construcao container
-        run: docker build -t https://hub.docker.com/$USUARIO_DOCKER_HUB/controle-folha-pagamento:latest -f Dockerfile .
+        run: docker build -t $USUARIO_DOCKER_HUB/controle-folha-pagamento:latest -f Dockerfile .
       - name: Push
         run: docker push $USUARIO_DOCKER_HUB/controle-folha-pagamento:latest
 
