@@ -14,6 +14,7 @@ namespace ControleFolhaPagamento.API.Mappers.impl
                 SobreNome = dto.sobrenome,
                 Setor = dto.setor,
                 Documento = dto.documento,
+                DataAdmissao = dto.dataAdmissao,
                 SalarioBruto = dto.salariobruto,
                 PossuiPlanoDental = dto.possuiPlanoDental,
                 PossuiPlanoSaude = dto.possuiPlanoSaude,
