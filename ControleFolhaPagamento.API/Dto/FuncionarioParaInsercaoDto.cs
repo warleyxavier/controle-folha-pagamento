@@ -10,6 +10,7 @@ namespace ControleFolhaPagamento.API.Dto
         public string nome { get; set; }
         public string sobrenome { get; set; }
         public string documento { get; set; }
+        public DateTime dataAdmissao { get; set; }
         public string setor { get; set; }
         public double salariobruto { get; set; }
         public bool possuiPlanoSaude { get; set; }

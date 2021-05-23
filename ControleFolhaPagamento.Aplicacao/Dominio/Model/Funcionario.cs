@@ -13,6 +13,7 @@ namespace ControleFolhaPagamento.Aplicacao.Dominio.Model
         public string SobreNome { get; set; }
         public string Documento { get; set; }
         public string Setor { get; set; }
+        public DateTime DataAdmissao { get; set; }
         public double SalarioBruto { get; set; }
         public bool PossuiPlanoSaude { get; set; }
         public bool PossuiPlanoDental { get; set; }

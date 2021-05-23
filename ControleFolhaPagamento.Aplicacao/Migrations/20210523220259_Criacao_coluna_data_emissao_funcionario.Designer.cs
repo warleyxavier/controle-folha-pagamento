@@ -3,15 +3,17 @@ using System;
 using ControleFolhaPagamento.Aplicacao.Infraestrutura.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace ControleFolhaPagamento.Aplicacao.Migrations
 {
     [DbContext(typeof(GlobalContext))]
-    partial class GlobalContextModelSnapshot : ModelSnapshot
+    [Migration("20210523220259_Criacao_coluna_data_emissao_funcionario")]
+    partial class Criacao_coluna_data_emissao_funcionario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
