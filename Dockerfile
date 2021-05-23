@@ -5,8 +5,8 @@ WORKDIR /app
 COPY ControleFolhaPagamento.API/ControleFolhaPagamento.API.csproj ./
 COPY ControleFolhaPagamento.Aplicacao/ControleFolhaPagamento.Aplicacao.csproj ./
 
-RUN dotnet restore ControleFolhaPagamento.API\ControleFolhaPagamento.API.csproj
-RUN dotnet restore ControleFolhaPagamento.Aplicacao\ControleFolhaPagamento.Aplicacao.csproj
+RUN dotnet restore ControleFolhaPagamento.API/ControleFolhaPagamento.API.csproj
+RUN dotnet restore ControleFolhaPagamento.Aplicacao/ControleFolhaPagamento.Aplicacao.csproj
 
 COPY . .
 
