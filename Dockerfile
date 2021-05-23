@@ -5,7 +5,6 @@ WORKDIR /app
 COPY . .
 
 RUN dotnet restore ControleFolhaPagamento.API/ControleFolhaPagamento.API.csproj
-RUN dotnet restore ControleFolhaPagamento.Aplicacao/ControleFolhaPagamento.Aplicacao.csproj
 
 EXPOSE 5000
 EXPOSE 5001
