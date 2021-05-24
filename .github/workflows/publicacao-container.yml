@@ -2,7 +2,7 @@ name: Publicacao Container Docker
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
   build:

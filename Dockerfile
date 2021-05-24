@@ -9,4 +9,4 @@ RUN dotnet restore ControleFolhaPagamento.API/ControleFolhaPagamento.API.csproj
 EXPOSE 5000
 EXPOSE 5001
 
-CMD [ "dotnet", "run -p ControleFolhaPagamento.API" ]
+CMD [ "dotnet run -p ControleFolhaPagamento.API" ]
