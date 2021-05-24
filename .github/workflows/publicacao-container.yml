@@ -3,8 +3,6 @@ name: Publicacao Container Docker
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
