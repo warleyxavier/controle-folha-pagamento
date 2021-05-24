@@ -4,12 +4,13 @@ WORKDIR /app
 
 COPY . .
 
-RUN dotnet restore ControleFolhaPagamento.API/ControleFolhaPagamento.API.csproj
+RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:3.1
 WORKDIR /app
+COPY --from=build-env /app/out .
 
 EXPOSE 5000
 EXPOSE 5001
 
-CMD [ "dotnet run -p ControleFolhaPagamento.API" ]
+ENTRYPOINT ["dotnet", "aspnetapp.dll"]
