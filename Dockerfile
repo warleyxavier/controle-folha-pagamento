@@ -13,4 +13,4 @@ COPY --from=build-env /app/out .
 EXPOSE 5000
 EXPOSE 5001
 
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ENTRYPOINT ["dotnet", "out/ControleFolhaPagamento.API.dll"]
