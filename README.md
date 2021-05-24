@@ -15,15 +15,15 @@ A aplicação é responsável pela gestão de funcionários (cadastro e consulta
 
 ```
 {
-	"nome": "",
-	"sobrenome": "",
-	"documento": "",
-	"setor": "",
-	"salariobruto": 0,
-    "dataAdmissao": "YYYY-MM-DD",
-	"possuiplanosaude": false,
-	"possuiplanodental": false,
-	"possuivaletransporte": false
+  "nome": "",
+  "sobrenome": "",
+  "documento": "",
+  "setor": "",
+  "salariobruto": 0,
+  "dataAdmissao": "YYYY-MM-DD",
+  "possuiplanosaude": false,
+  "possuiplanodental": false,
+  "possuivaletransporte": false
 }
 ```
 
@@ -52,7 +52,7 @@ A aplicação é responsável pela gestão de funcionários (cadastro e consulta
 1. Clone o projeto
 2. Abra no Visual Studio ou editor de sua preferência
 3. Selecione o projeto ControleFolhaPagamento.API
-4. Execute a aplicação ou execute o comando dotnet run
+4. Execute a aplicação ou execute o comando **dotnet run**
 
 Só isso. Simples assim ;).
 
@@ -64,3 +64,13 @@ Caso queira configurar um banco em outra instância será necessário seguir os 
 2. Altere a configuração de conexão para o novo banco. A configuração encontra-se no arquivo ControleFolhaPagamento.API\appsettings.json
 3. Execute os migrations que constam no projeto ControleFolhaPagamento.Aplicacao
 4. Pronto. Só executar a aplicação.
+
+## Como rodar uma instância com o docker
+
+A aplicação também possui um container funcional hospedado no dockerhub
+
+Para criar um container com a aplicação execute o comando:
+
+```
+docker run -d -p {porta disponível na sua máquina}:80 warleyxavier/controle-folha-pagamento
+```
