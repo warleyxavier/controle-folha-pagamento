@@ -3,10 +3,8 @@ name: Publicacao Container Docker
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ develop ]
 
-jobs:
+    jobs:
   build:
     runs-on: ubuntu-latest
     steps:
